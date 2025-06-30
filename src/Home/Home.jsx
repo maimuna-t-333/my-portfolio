@@ -9,6 +9,7 @@ import Footer from '../Comonents/Footer';
 import Skills from '../Comonents/Skills';
 import Education from '../Comonents/Education';
 import Contact from '../Comonents/Contact';
+import Projects from '../Comonents/Projects';
 
 const navLinks = [
     { name: 'About Me', path: 'about' },
@@ -69,6 +70,7 @@ const Home = () => {
             <Aboutme/>
             <Skills></Skills>
             <Education></Education>
+            <Projects></Projects>
             <Contact></Contact>
             <Footer></Footer>
         </>
