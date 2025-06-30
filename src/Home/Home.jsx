@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import img from '../../src/assets/Maimunah Tabassum.png'
 import Banner from '../assets/Pages/Banner';
 import { div } from 'framer-motion/client';
+import Aboutme from '../assets/Pages/Aboutme';
+import Footer from '../Comonents/Footer';
+import Skills from '../Comonents/Skills';
 
 const navLinks = [
     { name: 'About Me', path: 'about' },
@@ -28,44 +31,6 @@ const itemVariants = {
 };
 
 const Home = () => {
-    // return (
-
-    //     <div className=" bg-black w-full h-16 flex items-center justify-end pr-16">
-    //         <div className='flex justify-between gap-210 '>
-    //             <div>
-    //                 <img className='h-16 w-16' src={img} alt="" />
-    //             </div>
-    //             <div>
-    //                 <motion.div
-    //                     className="flex gap-6 text-[18px] mt-4"
-    //                     variants={containerVariants}
-    //                     initial="hidden"
-    //                     animate="show"
-    //                 >
-    //                     {navLinks.map((link) => (
-    //                         <motion.div key={link.path} variants={itemVariants}>
-    //                             <Link
-    //                                 to={link.path}
-    //                                 className="relative group overflow-hidden"
-    //                             >
-    //                                 <span className="text-white transition duration-300 group-hover:text-white group-hover:drop-shadow-md">
-    //                                     {link.name}
-    //                                 </span>
-
-    //                             </Link>
-    //                         </motion.div>
-    //                     ))}
-    //                 </motion.div>
-    //             </div>
-    //         </div>
-
-
-    //     </div>
-
-
-    //     <Banner></Banner>
-    // );
-
 
     return (
         <>
@@ -99,6 +64,9 @@ const Home = () => {
             </div>
 
             <Banner />
+            <Aboutme/>
+            <Skills></Skills>
+            <Footer></Footer>
         </>
     );
 
