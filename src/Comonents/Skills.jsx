@@ -38,7 +38,7 @@ const Skills = () => {
               className="flex flex-col items-center"
             >
               {tech.icon}
-              <span className="text-xs text-gray-400 mt-4">{tech.name}</span>
+              <span className="text-xs text-white mt-4">{tech.name}</span>
             </motion.div>
           ))}
         </div>

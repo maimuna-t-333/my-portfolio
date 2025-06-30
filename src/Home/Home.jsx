@@ -7,6 +7,8 @@ import { div } from 'framer-motion/client';
 import Aboutme from '../assets/Pages/Aboutme';
 import Footer from '../Comonents/Footer';
 import Skills from '../Comonents/Skills';
+import Education from '../Comonents/Education';
+import Contact from '../Comonents/Contact';
 
 const navLinks = [
     { name: 'About Me', path: 'about' },
@@ -66,6 +68,8 @@ const Home = () => {
             <Banner />
             <Aboutme/>
             <Skills></Skills>
+            <Education></Education>
+            <Contact></Contact>
             <Footer></Footer>
         </>
     );

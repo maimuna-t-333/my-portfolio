@@ -7,7 +7,7 @@ const Aboutme = () => {
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 1, ease: "easeOut" }}
             >
                 <h2 className="text-3xl text-center font-bold mb-4  border-white pb-1">
                     About Me
