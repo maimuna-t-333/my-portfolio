@@ -1,39 +1,33 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaInfoCircle } from "react-icons/fa";
-import ss1 from '../assets/ss-1.PNG';
-import ss2 from '../assets/ss-2.PNG';
-import ss3 from '../assets/ss-3.PNG';
+// import ss1 from '../assets/ss-1.PNG';
+import ss2 from '../assets/project-2.1.PNG';
+import ss3 from '../assets/project-1.1.PNG';
 
 
 // Example projects data
 const projects = [
+
   {
     id: 1,
-    title: "JobTrack Website",
-    description: "An intuitive platform to track your job applications, organize resumes and cover letters, set reminders, and stay on top of your job search—all in one place.",
-    image: ss1, 
-    technologies: ["React", "Tailwind CSS", "Framer Motion"],
-    liveLink: "https://auth-integration-fef4f.web.app/",
-    githubLink: "https://github.com/maimuna-t-333/job-track-website1",
-  },
-  {
-    id: 2,
     title: "Hobby Hub",
     description: "Discover, share, and grow your passions with a community of hobby enthusiasts.",
     image: ss2,
-    technologies: ["React", "Node.js", "MongoDB"],
+    technologies: ["React", "Node.js", "MongoDB","Firebase"],
     liveLink: "https://hobby-hub-4cfce.web.app/",
-    githubLink: "https://github.com/maimuna-t-333/hobby-hub-client",
+    ClientGithubLink: "https://github.com/maimuna-t-333/hobby-hub-client",
+    ServerGithubLink: "https://github.com/maimuna-t-333/hobby-hub-server",
   },
   {
-    id: 3,
+    id: 2,
     title: "Food Sharing Platform",
     description: "“Connect with your community to share surplus food, reduce waste, and make meals go further.",
     image: ss3,
-    technologies: ["React", "Firebase", "Tailwind CSS"],
+    technologies: ["React", "Firebase", "MongoDB", "Express.js"],
     liveLink: "https://food-sharing-platform-client.web.app/",
-    githubLink: "https://github.com/maimuna-t-333/food-sharing-platform-client",
+    ClientGithubLink: "https://github.com/maimuna-t-333/food-sharing-platform-client",
+    ServerGithubLink: "https://github.com/maimuna-t-333/food-sharing-platform-server",
   },
 ];
 
@@ -76,7 +70,7 @@ const Projects = () => {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="bg-black border text-xs px-2 py-1 rounded"
+                      className="bg-black border text-xs px-2 py-1 rounded mt-6"
                     >
                       {tech}
                     </span>
@@ -93,19 +87,22 @@ const Projects = () => {
                   <FaExternalLinkAlt /> Live
                 </a>
                 <a
-                  href={project.githubLink}
+                  href={project.ClientGithubLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-white text-black px-3 py-2 rounded hover:bg-gray-300 transition"
                 >
-                  <FaGithub /> GitHub
+                  <FaGithub /> GitHub Client
                 </a>
-                <button
+                <a
+                  href={project.ServerGithubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-white text-black px-3 py-2 rounded hover:bg-gray-300 transition"
-                  onClick={() => alert(`More details about: ${project.title}`)}
                 >
-                  <FaInfoCircle /> Details
-                </button>
+                  <FaGithub /> GitHub Server
+                </a>
+
               </div>
             </div>
           </motion.div>

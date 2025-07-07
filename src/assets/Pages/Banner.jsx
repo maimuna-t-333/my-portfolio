@@ -6,11 +6,11 @@ import { SiFirebase } from "react-icons/si";
 
 const Banner = () => {
     return (
-        <div className="bg-black w-full min-h-min py-30">
+        <div className="bg-black w-full min-h-min py-14 lg:py-30">
             <div className="max-w-3xl mx-auto text-center px-4">
-                <h1 className="text-4xl font-bold text-white">Maimunah Tabassum</h1>
-                <h3 className="text-2xl text-white mt-2">Frontend Developer</h3>
-                <p className="text-gray-300 mt-4 text-base">
+                <h1 className="text-3xl lg:text-4xl font-bold text-white">Maimunah Tabassum</h1>
+                <h3 className="text-xl lg:text-2xl text-white mt-6">MERN Stack Developer</h3>
+                <p className="text-gray-300  mt-4 text-base">
                     Passionate about crafting beautiful and responsive web experiences. I love transforming ideas into interactive and user-friendly interfaces.
                 </p>
 
