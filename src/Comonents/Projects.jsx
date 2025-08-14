@@ -1,115 +1,111 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { FaExternalLinkAlt, FaGithub, FaInfoCircle } from "react-icons/fa";
-// import ss1 from '../assets/ss-1.PNG';
 import ss2 from '../assets/project-2.1.PNG';
 import ss3 from '../assets/project-1.1.PNG';
+import ss4 from '../../src/assets/ss4.PNG';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
-
-// Example projects data
 const projects = [
-
   {
-    id: 1,
-    title: "Hobby Hub",
-    description: "Discover, share, and grow your passions with a community of hobby enthusiasts.",
-    image: ss2,
-    technologies: ["React", "Node.js", "MongoDB","Firebase"],
-    liveLink: "https://hobby-hub-4cfce.web.app/",
-    ClientGithubLink: "https://github.com/maimuna-t-333/hobby-hub-client",
-    ServerGithubLink: "https://github.com/maimuna-t-333/hobby-hub-server",
+    name: "Blockwise",
+    image: ss4,
+    tech: ["React", "Firebase", "MongoDB", "Express.js"],
+    description: "Choose your perfect apartment with our easy-to-use booking platform.",
+    live: "https://blockwise-client.web.app/",
+    github: "https://github.com/maimuna-t-333/blockwise-client",
+    challenges: "Handling role-based access and secure bookings with real-time updates.",
+    future: "Add AI-based recommendations and mobile app integration."
   },
   {
-    id: 2,
-    title: "Food Sharing Platform",
-    description: "“Connect with your community to share surplus food, reduce waste, and make meals go further.",
+    name: "Food Sharing Platform",
     image: ss3,
-    technologies: ["React", "Firebase", "MongoDB", "Express.js"],
-    liveLink: "https://food-sharing-platform-client.web.app/",
-    ClientGithubLink: "https://github.com/maimuna-t-333/food-sharing-platform-client",
-    ServerGithubLink: "https://github.com/maimuna-t-333/food-sharing-platform-server",
+    tech: ["React", "Firebase", "MongoDB", "Express.js"],
+    description: "Connect with your community to share surplus food, reduce waste, and make meals go further.",
+    live: "https://food-sharing-platform-client.web.app/",
+    github: "https://github.com/maimuna-t-333/food-sharing-platform-client",
+    challenges: "Managing real-time food requests and location-based sharing efficiently.",
+    future: "Introduce automated notifications and donation tracking features."
   },
+  {
+    name: "HobbyHub",
+    image: ss2,
+    tech: ["React", "Node.js", "MongoDB", "Firebase"],
+    description: "Discover, share, and grow your passions with a community of hobby enthusiasts.",
+    live: "https://hobby-hub-4cfce.web.app/",
+    github: "https://github.com/maimuna-t-333/hobby-hub-client",
+    challenges: "Building a scalable community platform and handling user-generated content.",
+    future: "Add gamification and hobby recommendation engine."
+  }
 ];
 
 const Projects = () => {
-  return (
-    <div className="bg-black text-white py-16 px-4">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-3xl font-bold text-center mb-12"
-      >
-        My Projects
-      </motion.h2>
+  const [selectedProject, setSelectedProject] = useState(null);
 
-      <div className="max-w-6xl mx-auto space-y-12">
+  return (
+    <div id="projects" className="bg-black text-white py-16 px-4">
+      <h2 className="text-3xl text-center font-bold mb-10">Projects</h2>
+      
+      {/* Responsive Vertical Layout */}
+      <div className="flex flex-col gap-10 max-w-4xl mx-auto">
         {projects.map((project, index) => (
           <motion.div
-            key={project.id}
+            key={index}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
-            className="flex flex-col md:flex-row bg-black border rounded-xl overflow-hidden shadow-lg"
+            transition={{ duration: 0.5 }}
+            className="bg-black border border-gray-700 p-4 rounded-lg shadow-lg"
           >
-            {/* Image */}
-            <div className="md:w-1/2">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-64 md:h-full object-cover"
-              />
-            </div>
-
-            {/* Content */}
-            <div className="md:w-1/2 p-6 flex flex-col justify-between">
-              <div>
-                <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-black border text-xs px-2 py-1 rounded mt-6"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-white text-black px-3 py-2 rounded hover:bg-gray-300 transition"
-                >
-                  <FaExternalLinkAlt /> Live
-                </a>
-                <a
-                  href={project.ClientGithubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-white text-black px-3 py-2 rounded hover:bg-gray-300 transition"
-                >
-                  <FaGithub /> GitHub Client
-                </a>
-                <a
-                  href={project.ServerGithubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-white text-black px-3 py-2 rounded hover:bg-gray-300 transition"
-                >
-                  <FaGithub /> GitHub Server
-                </a>
-
-              </div>
-            </div>
+            <img
+              src={project.image}
+              alt={project.name}
+              className="w-full h-56 sm:h-64 md:h-72 object-cover rounded-md mb-4"
+            />
+            <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+            <p className="text-sm mb-2">{project.description}</p>
+            <button
+              onClick={() => setSelectedProject(project)}
+              className="btn-outline border text-white px-4 py-2 rounded-md mt-2 w-full sm:w-auto hover:cursor-pointer"
+            >
+              View More
+            </button>
           </motion.div>
         ))}
       </div>
+
+      {/* Modal for project details */}
+      {selectedProject && (
+        <div className="fixed inset-0 bg-black  bg-opacity-70 flex justify-center items-center p-4 z-50">
+          <div className="bg-black border text-white max-w-lg w-full rounded-lg p-6 relative">
+            <button
+              className="absolute top-2 right-2 text-xl font-bold"
+              onClick={() => setSelectedProject(null)}
+            >
+              ✕
+            </button>
+            <h3 className="text-2xl font-bold mb-4">{selectedProject.name}</h3>
+            <img
+              src={selectedProject.image}
+              alt={selectedProject.name}
+              className="w-full h-56 object-cover rounded-md mb-4"
+            />
+            <p className="mb-2"><strong>Tech Stack:</strong> {selectedProject.tech.join(", ")}</p>
+            <p className="mb-2"><strong>Description:</strong> {selectedProject.description}</p>
+            <p className="mb-2"><strong>Challenges Faced:</strong> {selectedProject.challenges}</p>
+            <p className="mb-4"><strong>Future Plans:</strong> {selectedProject.future}</p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href={selectedProject.live} target="_blank" rel="noopener noreferrer" className="border text-white px-4 py-2 rounded-md text-center">
+                Live Demo
+              </a>
+              <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white px-4 py-2 rounded-md text-center">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default Projects;
+
+

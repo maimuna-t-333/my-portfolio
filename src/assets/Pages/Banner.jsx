@@ -3,6 +3,7 @@ import { FaReact, FaJsSquare } from "react-icons/fa";
 import { SiMongodb } from "react-icons/si";
 import { motion } from "framer-motion";
 import { SiFirebase } from "react-icons/si";
+import { IoMdDownload } from "react-icons/io";
 
 const Banner = () => {
     return (
@@ -42,6 +43,17 @@ const Banner = () => {
                     >
                         <SiFirebase title="Firebase" />
                     </motion.div>
+
+                </div>
+                <div>
+                    {/* Download Resume Button */}
+                    <a
+                        href="/public/MERN STACK DEVELOPER.pdf"
+                       
+                        target="_blank" className="flex gap-2 w-1/4 btn-outline border text-white sm:px-4 lg:px-12 lg:ml-70 sm:ml-20 my-10 py-2 rounded-lg btn-sm text-sm transition"
+                    >
+                      <IoMdDownload className="sm:mt-6 lg:mt-1 text-white"  /> Resume
+                    </a>
                 </div>
             </div>
         </div>

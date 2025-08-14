@@ -8,13 +8,18 @@ import Skills from '../Comonents/Skills';
 import Education from '../Comonents/Education';
 import Contact from '../Comonents/Contact';
 import Projects from '../Comonents/Projects';
+import { Link } from 'react-router';
+import Experience from '../Comonents/Experience';
 
 const navLinks = [
   { name: 'About Me', path: 'about' },
   { name: 'Skills', path: 'skills' },
   { name: 'Education', path: 'education' },
+  { name: 'Experience', path: 'experience' },
   { name: 'Projects', path: 'projects' },
   { name: 'Contact', path: 'contact' },
+  
+
 ];
 
 const containerVariants = {
@@ -40,7 +45,10 @@ const Home = () => {
       <header className="bg-black w-full px-4 py-4 flex items-center justify-between sticky top-0 z-50">
         {/* Logo */}
         <div className="flex items-center gap-4 lg:mx-10">
-          <img className="h-20 w-20 rounded-full" src={img} alt="logo" />
+          <Link to='/' className="h-20 w-20 rounded-full">
+            <img src={img} alt="logo" />
+          </Link>
+
         </div>
 
         {/* Hamburger Button */}
@@ -109,6 +117,9 @@ const Home = () => {
       </section>
       <section id="education" className="scroll-mt-24">
         <Education />
+      </section>
+      <section id="experience" className="scroll-mt-24">
+        <Experience></Experience>
       </section>
       <section id="projects" className="scroll-mt-24">
         <Projects />
