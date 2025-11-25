@@ -9,13 +9,12 @@ import Education from '../Comonents/Education';
 import Contact from '../Comonents/Contact';
 import Projects from '../Comonents/Projects';
 import { Link } from 'react-router';
-import Experience from '../Comonents/Experience';
+
 
 const navLinks = [
   { name: 'About Me', path: 'about' },
   { name: 'Skills', path: 'skills' },
   { name: 'Education', path: 'education' },
-  { name: 'Experience', path: 'experience' },
   { name: 'Projects', path: 'projects' },
   { name: 'Contact', path: 'contact' },
   
@@ -118,9 +117,8 @@ const Home = () => {
       <section id="education" className="scroll-mt-24">
         <Education />
       </section>
-      <section id="experience" className="scroll-mt-24">
-        <Experience></Experience>
-      </section>
+  
+
       <section id="projects" className="scroll-mt-24">
         <Projects />
       </section>
