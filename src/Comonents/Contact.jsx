@@ -63,7 +63,7 @@ const Contact = () => {
           <div className="flex items-center gap-3 text-lg">
             <FaLinkedin className="text-white" />
             <a
-              href="www.linkedin.com/in/maimunah-tabassum"
+              href="https://www.linkedin.com/in/maimunah-tabassum"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline"
